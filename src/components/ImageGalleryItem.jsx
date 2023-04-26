@@ -2,9 +2,10 @@ import { Component } from 'react';
 
 export class ImageGalleryItem extends Component {
   render() {
+    const { id, webformatURL } = this.props;
     return (
       <li className="gallery-item">
-        <img src="" alt="" />
+        <img id={`${id}`} src={webformatURL} alt="" />
       </li>
     );
   }

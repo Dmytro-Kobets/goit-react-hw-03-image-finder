@@ -2,9 +2,10 @@ import { Component } from 'react';
 
 export class Searchbar extends Component {
   render() {
+    const { handleSubmit } = this.props;
     return (
       <header className="searchbar">
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <button type="submit" className="button">
             <span className="button-label">Search</span>
           </button>
@@ -15,6 +16,7 @@ export class Searchbar extends Component {
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
+            name="searchQuery"
           />
         </form>
       </header>
