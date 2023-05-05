@@ -3,18 +3,21 @@ import { ImageGalleryItem } from './ImageGalleryItem';
 
 export class ImageGallery extends Component {
   render() {
-    const { images, isLoading } = this.props;
+    const { images, handleImageClick } = this.props;
     return (
       <ul className="gallery">
         {images.map(image => {
-          const { id, webformatURL } = image;
-          return isLoading ? (
-            <p>Loading</p>
-          ) : (
+          const { id, webformatURL, largeImageURL } = image;
+
+          return (
             <ImageGalleryItem
               key={id}
               id={id}
               webformatURL={webformatURL}
+              handleImageClick={() => {
+                handleImageClick(largeImageURL);
+                console.log(largeImageURL);
+              }}
             ></ImageGalleryItem>
           );
         })}
