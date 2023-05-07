@@ -1,16 +1,23 @@
 import { Component } from 'react';
+import {
+  SearchHeader,
+  SearchForm,
+  SearchButton,
+  SearchInput,
+} from './Searchbar.styled.js';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 export class Searchbar extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <header className="searchbar">
-        <form className="form" onSubmit={handleSubmit}>
-          <button type="submit" className="button">
-            <span className="button-label">Search</span>
-          </button>
+      <SearchHeader className="searchbar">
+        <SearchForm className="form" onSubmit={handleSubmit}>
+          <SearchButton type="submit" className="button">
+            <AiOutlineSearch size={20}></AiOutlineSearch>
+          </SearchButton>
 
-          <input
+          <SearchInput
             className="input"
             type="text"
             autoComplete="off"
@@ -18,8 +25,8 @@ export class Searchbar extends Component {
             placeholder="Search images and photos"
             name="searchQuery"
           />
-        </form>
-      </header>
+        </SearchForm>
+      </SearchHeader>
     );
   }
 }

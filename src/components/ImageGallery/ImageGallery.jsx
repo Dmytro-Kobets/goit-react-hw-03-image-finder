@@ -1,11 +1,12 @@
 import { Component } from 'react';
-import { ImageGalleryItem } from './ImageGalleryItem';
+import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
+import { GalleryList } from './ImageGallery.styled';
 
 export class ImageGallery extends Component {
   render() {
     const { images, handleImageClick } = this.props;
     return (
-      <ul className="gallery">
+      <GalleryList className="gallery">
         {images.map(image => {
           const { id, webformatURL, largeImageURL } = image;
 
@@ -16,12 +17,11 @@ export class ImageGallery extends Component {
               webformatURL={webformatURL}
               handleImageClick={() => {
                 handleImageClick(largeImageURL);
-                console.log(largeImageURL);
               }}
             ></ImageGalleryItem>
           );
         })}
-      </ul>
+      </GalleryList>
     );
   }
 }

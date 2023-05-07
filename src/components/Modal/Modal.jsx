@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Overlay, ModalWrapper, ModalImage } from './Modal.styled';
 
 export class Modal extends Component {
   componentDidMount() {
@@ -12,15 +13,15 @@ export class Modal extends Component {
     const { largeImageURL, handleModalClose, handleEscape } = this.props;
 
     return (
-      <div className="overlay" onKeyDown={handleEscape}>
-        <div
-          className="modal"
-          onClick={handleModalClose}
-          onKeyDown={handleEscape}
-        >
-          <img src={largeImageURL} alt="" onKeyDown={handleEscape} />
-        </div>
-      </div>
+      <Overlay
+        className="overlay"
+        onClick={handleModalClose}
+        onKeyDown={handleEscape}
+      >
+        <ModalWrapper className="modal">
+          <ModalImage src={largeImageURL} alt="" onKeyDown={handleEscape} />
+        </ModalWrapper>
+      </Overlay>
     );
   }
 }

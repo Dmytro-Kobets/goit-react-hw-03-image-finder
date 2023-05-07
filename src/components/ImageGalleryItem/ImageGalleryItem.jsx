@@ -1,17 +1,18 @@
 import { Component } from 'react';
+import { GalleryItem, GalleryPicture } from './ImageGalleryItem.styled';
 
 export class ImageGalleryItem extends Component {
   render() {
     const { id, webformatURL, handleImageClick } = this.props;
     return (
-      <li className="gallery-item">
-        <img
+      <GalleryItem className="gallery-item">
+        <GalleryPicture
           id={`${id}`}
           src={webformatURL}
           alt=""
           onClick={handleImageClick}
         />
-      </li>
+      </GalleryItem>
     );
   }
 }

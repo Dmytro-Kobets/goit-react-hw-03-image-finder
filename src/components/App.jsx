@@ -1,22 +1,11 @@
 import { Component } from 'react';
 import { Searchbar } from './Searchbar/Searchbar';
-import { ImageGallery } from './ImageGallery';
+import { ImageGallery } from './ImageGallery/ImageGallery';
 import { getImages } from '../services/API.js';
-import { LoadMoreButton } from './LoadMoreButton';
-import { Modal } from './Modal';
-import { Loader } from './Loader';
-// axios.defaults.baseURL = 'https://pixabay.com/api/';
-// axios.params['key'] = '';
+import { LoadMoreButton } from './LoadMoreButton/LoadMoreButton';
+import { Modal } from './Modal/Modal';
+import { Loader } from './Loader/Loader';
 
-// const getImages = async (searchQuery, page = 1, perPage) => {
-//   const options = {
-//     q: searchQuery,
-//     page: page,
-//     key: REACT_APP_API_KEY,
-//     image_type: 'photo',
-//     orientation: 'horizontal',
-//     per_page: 12,
-//   };
 // };
 
 export class App extends Component {
@@ -28,12 +17,6 @@ export class App extends Component {
     selectedImageURL: '',
     isModalOpen: false,
   };
-  // async componentDidMount() {
-  //   // try {
-  //   //   const data = await instance.get('', { params: { q: 'dog' } });
-  //   //   console.log(data);
-  //   // } catch (error) {}
-  // }
 
   async componentDidMount() {}
   handleSubmit = async e => {
@@ -90,6 +73,7 @@ export class App extends Component {
               images={this.state.images}
               handleImageClick={this.handleImageClick}
             ></ImageGallery>
+
             {this.state.images.length ? (
               <LoadMoreButton
                 handleLoadMore={this.handleLoadMore}
