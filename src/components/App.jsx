@@ -48,7 +48,6 @@ export class App extends Component {
 
   handleImageClick = largeImageURL => {
     this.setState({ selectedImageURL: largeImageURL, isModalOpen: true });
-    console.log(largeImageURL);
   };
 
   handleModalClose = e => {
