@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Overlay, ModalWrapper, ModalImage } from './Modal.styled';
-
+import PropTypes from 'prop-types';
 export class Modal extends Component {
   componentDidMount() {
     window.addEventListener('keydown', this.props.handleEscape);
@@ -25,3 +25,9 @@ export class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  largeImageURL: PropTypes.string.isRequired,
+  handleModalClose: PropTypes.func.isRequired,
+  handleEscape: PropTypes.func.isRequired,
+};

@@ -6,7 +6,7 @@ import {
   SearchInput,
 } from './Searchbar.styled.js';
 import { AiOutlineSearch } from 'react-icons/ai';
-
+import PropTypes from 'prop-types';
 export class Searchbar extends Component {
   render() {
     const { handleSubmit } = this.props;
@@ -30,3 +30,5 @@ export class Searchbar extends Component {
     );
   }
 }
+
+Searchbar.propTypes = { handleSubmit: PropTypes.func.isRequired };

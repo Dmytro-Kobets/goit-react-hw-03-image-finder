@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { GalleryItem, GalleryPicture } from './ImageGalleryItem.styled';
+import PropTypes from 'prop-types';
 
 export class ImageGalleryItem extends Component {
   render() {
@@ -16,3 +17,9 @@ export class ImageGalleryItem extends Component {
     );
   }
 }
+
+ImageGalleryItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  webformatURL: PropTypes.string.isRequired,
+  handleImageClick: PropTypes.func.isRequired,
+};
